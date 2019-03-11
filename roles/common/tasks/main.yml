@@ -1,0 +1,21 @@
+---
+
+- name: configure / Update yum packages
+  yum:
+    name: '*'
+    state: latest
+    update_cache: yes
+  become: yes
+
+- name: Add epel repository
+  yum:
+    name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+    state: latest
+    update_cache: yes
+  become: yes
+
+- name: install pip
+  yum:
+    name='python2-pip'
+    state=latest
+  become: yes

@@ -1,0 +1,7 @@
+---
+- name: Base installation
+  hosts: all
+  gather_facts: True
+  roles:
+   - { role: common }
+   - { role: docker }
