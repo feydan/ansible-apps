@@ -1,0 +1,6 @@
+---
+- name: Install Jenkins
+  hosts: all
+  gather_facts: True
+  roles:
+   - { role: jenkins }
