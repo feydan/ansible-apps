@@ -14,8 +14,26 @@
     update_cache: yes
   become: yes
 
+- name: Add git
+  yum:
+    name: git
+    state: latest
+  become: yes
+
 - name: install pip
   yum:
     name='python2-pip'
+    state=latest
+  become: yes
+
+- name: install boto3
+  pip:
+    name='boto3'
+    state=latest
+  become: yes
+
+- name: install boto
+  pip:
+    name='boto'
     state=latest
   become: yes
