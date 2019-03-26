@@ -20,20 +20,20 @@
     state: latest
   become: yes
 
+- name: Add gcc
+  yum:
+    name: gcc
+    state: latest
+  become: yes
+
 - name: install pip
   yum:
     name='python2-pip'
     state=latest
   become: yes
 
-- name: install boto3
+- name: install glances
   pip:
-    name='boto3'
-    state=latest
-  become: yes
-
-- name: install boto
-  pip:
-    name='boto'
+    name='glances'
     state=latest
   become: yes
